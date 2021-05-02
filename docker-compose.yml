@@ -1,0 +1,30 @@
+version : '3'
+services :
+
+  php8-fpm:
+     container_name: php8-fpm
+     restart: always
+     build: ./fpm
+     volumes:
+       - ./www:/var/www/html
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+            PMA_HOST : mysql
+    ports:
+      - "8000:80"
+
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./logs:/var/log/nginx/
+    ports:
+      - 800:443
