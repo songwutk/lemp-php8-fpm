@@ -23,8 +23,9 @@ services :
     container_name: nginx
     restart: always
     volumes:
-      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./logs:/var/log/nginx/
+      - ./www:/var/www/html
     ports:
-      - 800:443
+      - "800:443"
+      - "80:80"
