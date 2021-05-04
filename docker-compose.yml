@@ -4,10 +4,12 @@ services :
   php8-fpm:
      container_name: php8-fpm
      restart: always
-     build: ./fpm
+#     image: php:8.0.5-fpm-alpine3.13
+     image : songwutk/php8-fpm-alpine
      volumes:
        - ./www:/var/www/html
-
+     expose:
+       - 9000
   pma:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
