@@ -29,5 +29,4 @@ services :
       - ./logs:/var/log/nginx/
       - ./www:/var/www/html
     ports:
-      - "800:443"
-      - "80:80"
+            - "443:443"
