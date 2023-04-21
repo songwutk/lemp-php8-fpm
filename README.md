@@ -23,6 +23,9 @@ cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
 vim /usr/local/etc/php/php.ini
 
+set maximum file size for upload 
+set timezone
+
 ```
 php -m 
 ```
