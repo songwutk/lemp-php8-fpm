@@ -8,9 +8,11 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout custom.key -out
 
 docker exec -it php8-fpm /bin/sh
 
+apk update
+
 apk add php8-(new extension)
 
-apk add zip-dev mysqli 
+apk add zip zip-dev mysqli 
 
 docker-php-ext-install zip mysqli
 
