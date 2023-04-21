@@ -12,7 +12,7 @@ apk update
 
 apk add php8-(new extension)
 
-apk add zip libzip-dev mysqli 
+apk add zip libzip-dev php8-mysqli 
 
 docker-php-ext-install zip mysqli
 
